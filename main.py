@@ -38,7 +38,7 @@ config = {}
 config = {}
 config['MDN'] = MDN = True       #Set to falso for only the classification network
 config['num_layers'] = 2         #Number of layers for the LSTM
-config['hidden_size'] = 64     #Hidden size of the LSTM
+config['hidden_size'] = 1024     #Hidden size of the LSTM
 config['max_grad_norm'] = 1      #Clip the gradients during training
 config['batch_size'] = batch_size = 64
 config['sl'] = sl = 100           #Sequence length to extract data
@@ -48,8 +48,8 @@ config['learning_rate'] = .005   #Initial learning rate
 
 ratio = 0.8                      #Ratio for train-val split
 plot_every = 100                 #How often do you want terminal output for the performances
-max_iterations = 100 # for quick testing
-#max_iterations = 20000             #Maximum number of training iterations
+#max_iterations = 100 # for quick testing
+max_iterations = 20000             #Maximum number of training iterations
 dropout = 0.7                    #Dropout rate in the fully connected layer
 
 db = 5                            #distance to basket to stop trajectories
@@ -182,8 +182,7 @@ if plot:
     print(seq_samp.shape)
     export_to_csv = True
     if export_to_csv:
-      csvfile = open('predictions.csv', 'a+')
-      csvfile = open('predictions.csv', 'a+')
+      csvfile = open('predictions.csv', 'a+',newline='')
       csvwriter = csv.writer(csvfile, delimiter=",")
       csvwriter.writerow(["count", "timestamp", "joint_id", "x", "y", "z"])
       for count in range(sl):
