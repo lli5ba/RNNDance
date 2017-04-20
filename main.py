@@ -48,8 +48,8 @@ config['learning_rate'] = .005   #Initial learning rate
 
 ratio = 0.8                      #Ratio for train-val split
 plot_every = 100                 #How often do you want terminal output for the performances
-#max_iterations = 100 # for quick testing
-max_iterations = 20000             #Maximum number of training iterations
+#max_iterations = 100 # for testing
+max_iterations = 10000             #Maximum number of training iterations
 dropout = 0.7                    #Dropout rate in the fully connected layer
 
 db = 5                            #distance to basket to stop trajectories
@@ -155,7 +155,7 @@ if True:
         auc_ma = np.mean(perf_collect[6,:step+1])
 
       if auc_best < auc_ma: auc_best = auc_ma
-      if auc_ma < 0.8*auc_best: early_stop = True
+      #if auc_ma < 0.8*auc_best: early_stop = True
       #Write information to TensorBoard
       summary_str = result[2]
 #      writer.add_summary(summary_str, i)

@@ -232,7 +232,8 @@ class Model():
         rv = multivariate_normal(mean,cov)
         draw = rv.rvs()
         offset_draw = draw
-        seq_feed[0,start_idx:end_idx,sl_draw+1] = seq_feed[0,start_idx:end_idx,sl_draw]+offset_draw
+        #seq_feed[0,start_idx:end_idx,sl_draw+1] = seq_feed[0,start_idx:end_idx,sl_draw]+offset_draw
+        seq_feed[0,start_idx:end_idx,sl_draw+1] = offset_draw
 
     #Now draw some trajectories
     fig = plt.figure()
