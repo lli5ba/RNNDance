@@ -49,7 +49,7 @@ config['learning_rate'] = .005   #Initial learning rate
 ratio = 0.8                      #Ratio for train-val split
 plot_every = 100                 #How often do you want terminal output for the performances
 #max_iterations = 100 # for testing
-max_iterations = 100             #Maximum number of training iterations
+max_iterations = 2500             #Maximum number of training iterations
 dropout = 0.7                    #Dropout rate in the fully connected layer
 
 db = 5                            #distance to basket to stop trajectories
